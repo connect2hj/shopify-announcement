@@ -1,0 +1,12 @@
+name = "Promo Banner"
+type = "theme"
+uid = "06094289-59cd-4489-97c4-75ab4227fb3b0a71d656"
+
+[settings]
+type = "theme"
+name = "Announcement Banner"
+
+[[settings.blocks]]
+type = "app_embed"
+name = "Announcement Banner"
+category = "Storefront"

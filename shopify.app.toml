@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "fac313b6f1ae6b2d95f4e92f387333e2"
+name = "announcement-app"
+application_url = "https://amount-flight-abstract.ngrok-free.dev"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[webhooks]
+api_version = "2026-07"
+
+  [[webhooks.subscriptions]]
+  uri = "/webhooks/app/uninstalled"
+  topics = [ "app/uninstalled" ]
+
+  [[webhooks.subscriptions]]
+  uri = "/webhooks/app/scopes_update"
+  topics = [ "app/scopes_update" ]
+
+[auth]
+redirect_urls = [
+  "https://amount-flight-abstract.ngrok-free.dev/auth/callback",
+  "https://amount-flight-abstract.ngrok-free.dev/auth/shopify/callback",
+  "https://amount-flight-abstract.ngrok-free.dev/api/auth/callback",
+]
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true

@@ -1,0 +1,87 @@
+{% comment %}
+  App Embed Block: Announcement Banner
+  This block displays the announcement text from shop metafields
+{% endcomment %}
+
+{% assign announcement_text = shop.metafields.my_app.announcement %}
+
+{% if announcement_text != blank %}
+  <style>
+    #announcement-banner {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-bottom: 2px solid #e94560;
+    }
+    
+    #announcement-banner .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 8px;
+      transition: color 0.3s ease;
+    }
+    
+    #announcement-banner .close-btn:hover {
+      color: #ffffff;
+    }
+    
+    #announcement-banner .banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    @media (max-width: 768px) {
+      #announcement-banner {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+      
+      #announcement-banner .banner-content {
+        padding: 0 30px;
+      }
+      
+      #announcement-banner .close-btn {
+        right: 10px;
+        font-size: 18px;
+      }
+    }
+  </style>
+
+  <div id="announcement-banner" role="alert" aria-label="Store announcement">
+    <div class="banner-content">
+      <span>{{ announcement_text }}</span>
+    </div>
+    <button 
+      class="close-btn" 
+      onclick="this.parentElement.style.display='none'" 
+      aria-label="Close announcement"
+      type="button"
+    >
+      ✕
+    </button>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}
