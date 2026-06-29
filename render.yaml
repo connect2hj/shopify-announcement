@@ -4,7 +4,7 @@ services:
   - type: web
     name: announcement-app
     runtime: docker
-    repo: https://github.com/connect2hj/shopify-announcement.git
+    repo: https://github.com/connect2hj/shopify-announcement
     branch: main
     region: singapore # closest free region to you
     plan: free
