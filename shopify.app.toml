@@ -2,7 +2,7 @@
 
 client_id = "fac313b6f1ae6b2d95f4e92f387333e2"
 name = "announcement-app"
-application_url = "https://amount-flight-abstract.ngrok-free.dev"
+application_url = "https://announcement-app.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -22,9 +22,9 @@ api_version = "2026-07"
 
 [auth]
 redirect_urls = [
-  "https://amount-flight-abstract.ngrok-free.dev/auth/callback",
-  "https://amount-flight-abstract.ngrok-free.dev/auth/shopify/callback",
-  "https://amount-flight-abstract.ngrok-free.dev/api/auth/callback",
+  "https://announcement-app.onrender.com/auth/callback",
+  "https://announcement-app.onrender.com/auth/shopify/callback",
+  "https://announcement-app.onrender.com/api/auth/callback",
 ]
 
 [build]
